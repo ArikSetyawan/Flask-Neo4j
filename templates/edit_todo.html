@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit Todo</title>
+</head>
+<body>
+	<h1>Edit Todo</h1>
+	<form method="post" action="/edit_todo/{{data.uid}}">
+		<input type="text" value="{{data.todo_name}}" name="todo_name" required placeholder="Todo..">
+		<button>Submit!</button>
+	</form>
+
+</body>
+</html>

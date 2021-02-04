@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+</head>
+<body>
+	<h1>Todo with Neo4j GraphDB</h1>
+	<ul>
+		<li><a href="/logout">logout</a></li>
+		<li><a href="/add_todo">Add Todo</a></li>
+	</ul>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Todo</th>
+				<th>Status</th>
+				<th>Option</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for i in data %}
+			<tr>
+				<td>{{loop.index}}</td>
+				<td>{{i.todo_name}}</td>
+				<td>{% if i.is_complete == True %}Selesai{% else %}Pending{% endif %}</td>
+				<td><a href="/edit_todo/{{i.uid}}">Edit</a> <a href="/delete_todo/{{i.uid}}">Hapus</a> <a href="/mark_todo/{{i.uid}}">Selesai</a></td>
+			</tr>
+			{% endfor %}
+		</tbody>
+
+	</table>
+</body>
+</html>
